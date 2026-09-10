@@ -1203,7 +1203,8 @@ SELECT customer_id, SUM(amount) AS total_spend
 FROM orders
 GROUP BY customer_id
 ORDER BY total_spend DESC
-LIMIT 5;</pre>
+LIMIT 5;</pre
+              >
               <p>
                 <b>Explanation:</b> Use GROUP BY to aggregate spend by customer,
                 ORDER BY DESC to sort highest first, and LIMIT 5 to get top
@@ -1238,7 +1239,8 @@ WHERE customer_id NOT IN (
     SELECT DISTINCT customer_id
     FROM orders
     WHERE order_date >= CURRENT_DATE - INTERVAL '90 days'
-);</pre>
+);</pre
+              >
               <p>
                 <b>Explanation:</b> Use NOT IN with a subquery that finds
                 customers with recent orders. This returns customers with no
@@ -1288,7 +1290,8 @@ SELECT
     SUM(SUM(amount)) OVER (ORDER BY DATE_TRUNC('month', order_date)) AS running_total
 FROM orders
 GROUP BY DATE_TRUNC('month', order_date)
-ORDER BY month;</pre>
+ORDER BY month;</pre
+              >
               <p>
                 <b>Explanation:</b> Use a window function with SUM() OVER() to
                 calculate the cumulative total. ORDER BY in the window function
@@ -1334,7 +1337,8 @@ ORDER BY month;</pre>
               >
 SELECT MAX(salary) AS second_highest_salary
 FROM employees
-WHERE salary &lt; (SELECT MAX(salary) FROM employees);</pre>
+WHERE salary &lt; (SELECT MAX(salary) FROM employees);</pre
+              >
             </div>
           </details>
 
@@ -1375,7 +1379,8 @@ WHERE salary &lt; (SELECT MAX(salary) FROM employees);</pre>
 SELECT column1, column2, COUNT(*)
 FROM table_name
 GROUP BY column1, column2
-HAVING COUNT(*) > 1;</pre>
+HAVING COUNT(*) > 1;</pre
+              >
             </div>
           </details>
 
@@ -1426,7 +1431,8 @@ SELECT month,
        ROUND(((total_sales - LAG(total_sales, 1) OVER (ORDER BY month)) / 
               LAG(total_sales, 1) OVER (ORDER BY month)) * 100, 2) AS growth_pct
 FROM monthly_sales
-ORDER BY month;</pre>
+ORDER BY month;</pre
+              >
             </div>
           </details>
 
@@ -1471,7 +1477,8 @@ SELECT customer_id,
 FROM orders
 GROUP BY customer_id, DATE_TRUNC('month', order_date)
 HAVING COUNT(order_id) > 5
-ORDER BY customer_id, month;</pre>
+ORDER BY customer_id, month;</pre
+              >
             </div>
           </details>
 
@@ -1516,7 +1523,8 @@ SELECT
     salary,
     RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS rank
 FROM employees
-ORDER BY department_id, rank;</pre>
+ORDER BY department_id, rank;</pre
+              >
             </div>
           </details>
 
@@ -1562,7 +1570,8 @@ ORDER BY department_id, rank;</pre>
               >
 import pandas as pd
 df = pd.read_csv('file.csv')
-print(df.head())</pre>
+print(df.head())</pre
+              >
             </div>
           </details>
 
@@ -1606,7 +1615,8 @@ import pandas as pd
 
 def clean_dates(df, column):
     df[column] = pd.to_datetime(df[column], errors='coerce')
-    return df</pre>
+    return df</pre
+              >
             </div>
           </details>
 
@@ -1645,7 +1655,8 @@ def clean_dates(df, column):
                   line-height: 1.75;
                 "
               >
-df.groupby('category')['sales'].agg(['sum', 'mean', 'count', 'max', 'min'])</pre>
+df.groupby('category')['sales'].agg(['sum', 'mean', 'count', 'max', 'min'])</pre
+              >
             </div>
           </details>
 
@@ -1676,7 +1687,8 @@ df_merged = pd.merge(df1, df2, on='key_column')
 df_merged = pd.merge(df1, df2, on='key_column', how='left')
 
 # Different column names
-df_merged = pd.merge(df1, df2, left_on='key1', right_on='key2')</pre>
+df_merged = pd.merge(df1, df2, left_on='key1', right_on='key2')</pre
+              >
             </div>
           </details>
 
@@ -1721,7 +1733,8 @@ pivot = df.pivot_table(
     columns='product',
     aggfunc='sum',
     fill_value=0
-)</pre>
+)</pre
+              >
             </div>
           </details>
 
@@ -1771,7 +1784,8 @@ def create_bar_chart(x, y, title, xlabel, ylabel):
     plt.ylabel(ylabel)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()</pre>
+    plt.show()</pre
+              >
             </div>
           </details>
 
@@ -1810,7 +1824,8 @@ def create_bar_chart(x, y, title, xlabel, ylabel):
                   line-height: 1.75;
                 "
               >
-df.to_csv('output.csv', index=False)</pre>
+df.to_csv('output.csv', index=False)</pre
+              >
             </div>
           </details>
 
@@ -1835,7 +1850,8 @@ df.to_csv('output.csv', index=False)</pre>
                 "
               >
 df['profit'] = df['revenue'] - df['cost']
-df['category'] = df['value'].apply(lambda x: 'High' if x > 100 else 'Low')</pre>
+df['category'] = df['value'].apply(lambda x: 'High' if x > 100 else 'Low')</pre
+              >
             </div>
           </details>
 
@@ -2299,29 +2315,31 @@ df['category'] = df['value'].apply(lambda x: 'High' if x > 100 else 'Low')</pre>
           <div class="rel-grid">
             <a
               class="rel-card"
-              href="After-the-Layoff-What-I-Would-Do-in-the-First-30-Days.html"
+              href="https://uncodemy.com/blog/after-the-layoff-first-30-days.html"
               ><span class="t">What I would do in the first 30 days</span
               ><span class="m">Layoff · 14 min</span></a
             >
             <a
               class="rel-card"
-              href="After-the-Layoff-Why-Sending-500-Resumes-May-Not-Solve-the-Problem.html"
+              href="https://uncodemy.com/blog/after-the-layoff-why-500-resumes-wont-work.html"
               ><span class="t">Why sending 500 resumes won't work</span
               ><span class="m">Job Search · 14 min</span></a
             >
             <a
               class="rel-card"
-              href="After-the-Layoff-How-to-Rebuild-Your-Resume-for-Todays-AI-Job-Market.html"
+              href="https://uncodemy.com/blog/after-the-layoff-rebuild-resume-ai-job-market.html"
               ><span class="t">Rebuild your resume for the AI job market</span
               ><span class="m">Resume · 15 min</span></a
             >
             <a
               class="rel-card"
-              href="After-the-Layoff-Which-Skills-Should-You-Learn-Before-Applying-Again.html"
+              href="https://uncodemy.com/blog/after-the-layoff-skills-to-learn-before-applying"
               ><span class="t">Which skills to learn before applying</span
               ><span class="m">Skills · 14 min</span></a
             >
-            <a class="rel-card" href="90-Day-Career-Recovery-Roadmap.html"
+            <a
+              class="rel-card"
+              href="https://uncodemy.com/blog/90-day-career-recovery-roadmap-2026.html"
               ><span class="t">90-day career recovery roadmap</span
               ><span class="m">Recovery · 16 min</span></a
             >
